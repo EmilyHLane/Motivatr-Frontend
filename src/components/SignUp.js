@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+const baseURL = "https://ehl-motivatr-server.herokuapp.com";
 
 class SignUp extends Component {
   constructor() {
@@ -21,7 +22,7 @@ class SignUp extends Component {
   submit(e) {
     e.preventDefault();
     axios
-      .post("/api/user", {
+      .post(`${baseURL}/api/user`, {
         email: this.state.email,
         password: this.state.password,
         username: this.state.username

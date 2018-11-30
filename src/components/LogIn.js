@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
 import { Link } from "react-router-dom";
+const baseURL = "https://ehl-motivatr-server.herokuapp.com";
 
 class Login extends Component {
   constructor() {
@@ -21,7 +22,7 @@ class Login extends Component {
   submit(e) {
     e.preventDefault();
     axios
-      .post("/api/user/login", {
+      .post(`${baseURL}/api/user/login`, {
         email: this.state.email,
         password: this.state.password
       })
