@@ -11,7 +11,9 @@ class SelectImage extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://api.unsplash.com/photos/?client_id=${KEY}`)
+      .get(
+        `https://api.unsplash.com/photos/?client_id=394a69ff5a00a7ecd7a2d9077ebe7ff6ed0ad6b93c40969200b171422519d3e9`
+      )
       .then(res => {
         const images = res.data;
         this.setState({ images });
