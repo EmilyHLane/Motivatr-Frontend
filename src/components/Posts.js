@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Post from "./Post";
 import axios from "axios";
 
-const baseURL = "https://ehl-motivatr.herokuapp.com";
+const baseURL = "https://ehl-motivatr-server.herokuapp.com";
 
 class Posts extends Component {
   state = {
