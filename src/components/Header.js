@@ -25,7 +25,7 @@ class Header extends Component {
   render() {
     if (this.state.user === "guest") {
       return (
-        <header className="big-header">
+        <header className="small-header big-header">
           <div className="logo-name-container">
             <Link to="/">
               <h1>motivatr</h1>

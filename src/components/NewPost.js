@@ -1,28 +1,37 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class NewPost extends Component {
-  //define state
-
   render() {
+    const data = this.props;
+    console.log("newpost");
+    console.log(data);
+    console.log(this.props.textUpper);
     return (
       <div className="new-post-container">
         <input
           className="post-text-placeholder text-top"
           type="text"
-          name="post text top"
-          value=""
+          name="textUpper"
+          value={data.textUpper}
           placeholder="Add text here"
+          onChange={this.props.change}
         />
         <div className="post-image-placeholder">Image placeholder</div>
         <input
           className="post-text-placeholder text-bottom"
           type="text"
-          name="post text bottom"
-          value=""
+          name="textLower"
+          value={data.textLower}
           placeholder="Add text here"
+          onChange={this.props.change}
         />
-        <button className="post-done">Done</button>
-        <button className="post-cancel">Cancel</button>
+        <button className="post-done" onClick={this.props.submit}>
+          Done
+        </button>
+        <Link to="/">
+          <button className="post-cancel">Cancel</button>
+        </Link>
       </div>
     );
   }
