@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import SelectImage from "./SelectImage";
 import PostBuilder from "./PostBuilder";
-// import NewPost from "./NewPost";
 import Header from "./Header";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 // const baseURL = "https://ehl-motivatr-server.herokuapp.com";
 const devURL = "http://localhost:4000";
@@ -33,7 +32,7 @@ class CreatePostPage extends Component {
         likes: this.state.likes
       })
       .then(res => {
-        return <Redirect to="/" />;
+        this.props.history.push("/");
       })
       .catch(err => {
         alert(err);
