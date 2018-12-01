@@ -25,7 +25,7 @@ class SelectImage extends Component {
     return (
       <div className="select-image-container col-2">
         <h3>Select an Image</h3>
-        <Image images={this.state.images} />
+        <Image images={this.state.images} clickImg={this.props.clickImg} />
       </div>
     );
   }

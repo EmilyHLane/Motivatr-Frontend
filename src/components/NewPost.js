@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 class NewPost extends Component {
   render() {
     const data = this.props;
-    console.log("newpost");
-    console.log(data);
-    console.log(this.props.textUpper);
     return (
       <div className="new-post-container">
         <input
@@ -17,7 +14,9 @@ class NewPost extends Component {
           placeholder="Add text here"
           onChange={this.props.change}
         />
-        <div className="post-image-placeholder">Image placeholder</div>
+        <div className="post-image-placeholder">
+          <img src={data.image} alt="selected" />
+        </div>
         <input
           className="post-text-placeholder text-bottom"
           type="text"

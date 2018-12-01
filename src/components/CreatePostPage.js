@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import SelectImage from "./SelectImage";
 import PostBuilder from "./PostBuilder";
 import Header from "./Header";
-import { Redirect } from "react-router-dom";
 import axios from "axios";
 // const baseURL = "https://ehl-motivatr-server.herokuapp.com";
 const devURL = "http://localhost:4000";
@@ -21,9 +20,14 @@ class CreatePostPage extends Component {
     });
   };
 
+  clickImg = e => {
+    console.log("clicked img");
+    const newImage = e.target.src;
+    this.setState({ image: newImage });
+  };
+
   submit = e => {
     e.preventDefault();
-    console.log("clicked");
     axios
       .post(`${devURL}/api/post`, {
         textUpper: this.state.textUpper,
@@ -42,7 +46,7 @@ class CreatePostPage extends Component {
   cancel = e => {
     e.preventDefault();
     this.setState({
-      image: "",
+      image: "test",
       textUpper: "",
       textLower: ""
     });
@@ -51,7 +55,6 @@ class CreatePostPage extends Component {
   //use componentdidmount to switch to small header by toggling className small-header?
 
   render() {
-    console.log(this.state);
     return (
       <div className="create-post-page">
         <Header />
@@ -63,7 +66,7 @@ class CreatePostPage extends Component {
             submit={this.submit}
             change={this.change}
           />
-          <SelectImage newPost={this.state.image} />
+          <SelectImage clickImg={this.clickImg} />
         </div>
       </div>
     );

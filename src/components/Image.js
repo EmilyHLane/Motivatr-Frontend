@@ -8,7 +8,12 @@ class Image extends Component {
     const images = imageData.map(data => {
       return (
         <div key={data.id}>
-          <img src={data.urls.small} alt={data.description} />
+          <img
+            className="new-post-image"
+            src={data.urls.small}
+            alt={data.description}
+            onClick={this.props.clickImg}
+          />
         </div>
       );
     });
