@@ -14,6 +14,7 @@ class PostBuilder extends Component {
           textLower={this.props.textLower}
           textUpper={this.props.textUpper}
           image={this.props.image}
+          altTxt={this.props.altTxt}
           submit={this.props.submit}
           change={this.props.change}
         />

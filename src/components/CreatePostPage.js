@@ -8,7 +8,8 @@ const devURL = "http://localhost:4000";
 
 class CreatePostPage extends Component {
   state = {
-    image: "",
+    image: "https://dummyimage.com/400/e0e0e0/3d3d3d&text=select+an+image",
+    altTxt: "",
     textUpper: "",
     textLower: "",
     likes: 0
@@ -21,9 +22,9 @@ class CreatePostPage extends Component {
   };
 
   clickImg = e => {
-    console.log("clicked img");
     const newImage = e.target.src;
-    this.setState({ image: newImage });
+    const altTxt = e.target.alt;
+    this.setState({ image: newImage, altTxt });
   };
 
   submit = e => {
@@ -63,6 +64,7 @@ class CreatePostPage extends Component {
             textLower={this.state.textLower}
             textUpper={this.state.textUpper}
             image={this.state.image}
+            altTxt={this.state.altTxt}
             submit={this.submit}
             change={this.change}
           />

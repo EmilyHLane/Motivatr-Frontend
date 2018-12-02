@@ -15,7 +15,7 @@ class NewPost extends Component {
           onChange={this.props.change}
         />
         <div className="post-image-placeholder">
-          <img src={data.image} alt="selected" />
+          <img src={data.image} alt={data.altTxt} />
         </div>
         <input
           className="post-text-placeholder text-bottom"
