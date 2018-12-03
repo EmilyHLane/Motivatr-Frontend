@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
 import { Link } from "react-router-dom";
-const baseURL = "https://ehl-motivatr-server.herokuapp.com";
+const baseURL =
+  "https://ehl-motivatr-server.herokuapp.com" || "http://localhost:4000";
 
 class Login extends Component {
   constructor() {

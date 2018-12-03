@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-const baseURL = "https://ehl-motivatr-server.herokuapp.com";
-// const devURL = "http://localhost:4000";
+const baseURL =
+  "https://ehl-motivatr-server.herokuapp.com" || "http://localhost:4000";
 
 class PostDetail extends Component {
   state = {

@@ -3,8 +3,8 @@ import SelectImage from "./SelectImage";
 import PostBuilder from "./PostBuilder";
 import Header from "./Header";
 import axios from "axios";
-const baseURL = "https://ehl-motivatr-server.herokuapp.com";
-// const devURL = "http://localhost:4000";
+const baseURL =
+  "https://ehl-motivatr-server.herokuapp.com" || "http://localhost:4000";
 
 class CreatePostPage extends Component {
   state = {
