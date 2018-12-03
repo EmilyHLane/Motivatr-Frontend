@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Post from "./Post";
 import axios from "axios";
-// const baseURL = "https://ehl-motivatr-server.herokuapp.com";
-const devURL = "http://localhost:4000";
+const baseURL = "https://ehl-motivatr-server.herokuapp.com";
+// const devURL = "http://localhost:4000";
 
 class Posts extends Component {
   state = {
@@ -11,7 +11,7 @@ class Posts extends Component {
   };
 
   componentDidMount() {
-    axios.get(`${devURL}/api/post/`).then(res => {
+    axios.get(`${baseURL}/api/post/`).then(res => {
       const posts = res.data;
       this.setState({ posts });
     });

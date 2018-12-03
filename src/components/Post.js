@@ -15,7 +15,7 @@ const Post = props => {
       >
         <div className="post-container">
           <p id={data._id}>{data.textUpper}</p>
-          <img id={data._id} src={data.image} alt={data.alt} />
+          <img id={data._id} src={data.image} alt={data.altTxt} />
           <p id={data._id}>{data.textLower}</p>
         </div>
       </Link>

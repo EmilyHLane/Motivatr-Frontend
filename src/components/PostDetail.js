@@ -28,7 +28,7 @@ class PostDetail extends Component {
         <h2>PostDetail page</h2>
         <div>
           <p>{data.textUpper}</p>
-          <img src={data.image} alt="data.alt" />
+          <img src={data.image} alt={data.altTxt} />
           <p>{data.textLower}</p>
         </div>
       </div>

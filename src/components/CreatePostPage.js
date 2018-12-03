@@ -3,8 +3,8 @@ import SelectImage from "./SelectImage";
 import PostBuilder from "./PostBuilder";
 import Header from "./Header";
 import axios from "axios";
-// const baseURL = "https://ehl-motivatr-server.herokuapp.com";
-const devURL = "http://localhost:4000";
+const baseURL = "https://ehl-motivatr-server.herokuapp.com";
+// const devURL = "http://localhost:4000";
 
 class CreatePostPage extends Component {
   state = {
@@ -30,9 +30,10 @@ class CreatePostPage extends Component {
   submit = e => {
     e.preventDefault();
     axios
-      .post(`${devURL}/api/post`, {
+      .post(`${baseURL}/api/post`, {
         textUpper: this.state.textUpper,
         image: this.state.image,
+        altTxt: this.state.altTxt,
         textLower: this.state.textLower,
         likes: this.state.likes
       })
@@ -47,13 +48,12 @@ class CreatePostPage extends Component {
   cancel = e => {
     e.preventDefault();
     this.setState({
-      image: "test",
+      image: "",
+      altTxt: "",
       textUpper: "",
       textLower: ""
     });
   };
-
-  //use componentdidmount to switch to small header by toggling className small-header?
 
   render() {
     return (
