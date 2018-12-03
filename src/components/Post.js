@@ -1,19 +1,32 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import PostDetail from "./PostDetail";
 
 const Post = props => {
   const getData = props.posts;
 
   const postData = getData.map(data => {
     return (
-      <div className="post-container" key={data._id}>
-        <p>{data.textUpper}</p>
-        <img src={data.image} alt="motivational quote" />
-        <p>{data.textLower}</p>
-      </div>
+      <Link
+        id={data._id}
+        to="/post/:_id"
+        key={data._id}
+        onClick={props.clickPost}
+      >
+        <div className="post-container">
+          <p id={data._id}>{data.textUpper}</p>
+          <img id={data._id} src={data.image} alt={data.alt} />
+          <p id={data._id}>{data.textLower}</p>
+        </div>
+      </Link>
     );
   });
 
-  return <div className="all-posts">{postData}</div>;
+  if (props.goHome === true) {
+    return <div className="all-posts">{postData}</div>;
+  } else {
+    return <PostDetail postId={props.postId} />;
+  }
 };
 
 export default Post;

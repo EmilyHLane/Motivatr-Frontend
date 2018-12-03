@@ -7,6 +7,7 @@ import LogIn from "./components/LogIn";
 import LogOut from "./components/LogOut";
 import CreatePostPage from "./components/CreatePostPage";
 import QuoteFinder from "./components/QuoteFinder";
+import PostDetail from "./components/PostDetail";
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/createpost" component={CreatePostPage} />
           <Route exact path="/quotefinder" component={QuoteFinder} />
+          <Route exact path="/post/:_id" component={PostDetail} />
         </Switch>
       </div>
     );

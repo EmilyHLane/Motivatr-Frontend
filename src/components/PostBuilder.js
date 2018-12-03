@@ -3,8 +3,6 @@ import NewPost from "./NewPost";
 import { Link } from "react-router-dom";
 
 class PostBuilder extends Component {
-  //props.newPost
-
   render() {
     return (
       <div className="post-builder-container col-1">

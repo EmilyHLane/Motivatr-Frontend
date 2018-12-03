@@ -27,7 +27,7 @@ class Header extends Component {
       return (
         <header className="small-header big-header">
           <div className="logo-name-container">
-            <Link to="/">
+            <Link to="/" onClick={this.props.goHome}>
               <h1>motivatr</h1>
             </Link>
           </div>
@@ -44,7 +44,7 @@ class Header extends Component {
     return (
       <header>
         <div className="logo-name-container">
-          <Link to="/">
+          <Link to="/" onClick={this.props.goHome}>
             <h1>motivatr</h1>
           </Link>
         </div>
