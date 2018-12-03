@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Image from "./Image";
 import axios from "axios";
-
-// const KEY = require("../config/keys").US_KEY.REACT_APP_UNSPLASH_KEY;
+const KEY =
+  process.env.REACT_APP_UNSPLASH_KEY ||
+  require("../config/keys").US_KEY.REACT_APP_UNSPLASH_KEY;
 
 class SelectImage extends Component {
   state = {
@@ -11,9 +12,7 @@ class SelectImage extends Component {
 
   componentDidMount() {
     axios
-      .get(
-        `https://api.unsplash.com/photos/?client_id=394a69ff5a00a7ecd7a2d9077ebe7ff6ed0ad6b93c40969200b171422519d3e9`
-      )
+      .get(`https://api.unsplash.com/photos/?client_id=${KEY}`)
       .then(res => {
         const images = res.data;
         this.setState({ images });
