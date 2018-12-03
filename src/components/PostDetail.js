@@ -6,7 +6,7 @@ const baseURL =
 class PostDetail extends Component {
   state = {
     postDetail: [],
-    postUser: ""
+    postUser: null
   };
 
   componentDidMount() {
@@ -14,11 +14,13 @@ class PostDetail extends Component {
     axios
       .get(`${baseURL}/api/post/${postId}`)
       .then(res => {
-        const postUser = res.data.createdBy._id;
+        // const postUser = res.data.createdBy._id;
+        const postUser = res.data;
+        console.log(postUser);
         const postDetail = res.data;
         this.setState({ postDetail, postUser });
       })
-      .catch(err => alert(err));
+      .catch(err => alert(err + "post detail comp did mount"));
   }
 
   render() {

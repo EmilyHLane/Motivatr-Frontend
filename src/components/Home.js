@@ -12,9 +12,13 @@ class Home extends Component {
 
   componentDidMount() {
     const jwt = getJwt();
-    const userInfo = jwt_decode(localStorage.getItem("token"));
-    const userId = userInfo.id;
-    this.setState({ userId });
+    if (jwt) {
+      const userInfo = jwt_decode(localStorage.getItem("token"));
+      const userId = userInfo.id;
+      this.setState({ userId });
+    } else {
+      console.log("user is not logged in");
+    }
   }
 
   goHome = () => {
@@ -26,7 +30,6 @@ class Home extends Component {
   };
 
   render() {
-    console.log(this.state.userId);
     return (
       <div>
         <Header goHome={this.goHome} />
