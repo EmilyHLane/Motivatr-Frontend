@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import Posts from "./Posts";
+import { getJwt } from "../helpers/jwt";
 import jwt_decode from "jwt-decode";
 
 class Home extends Component {
@@ -10,6 +11,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
+    const jwt = getJwt();
     const userInfo = jwt_decode(localStorage.getItem("token"));
     const userId = userInfo.id;
     this.setState({ userId });
