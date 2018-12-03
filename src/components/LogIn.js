@@ -28,6 +28,7 @@ class Login extends Component {
         password: this.state.password
       })
       .then(res => {
+        console.log(res);
         const { token } = res.data;
         localStorage.setItem("token", token);
         //pass token in header

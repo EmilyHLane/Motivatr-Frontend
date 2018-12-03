@@ -7,7 +7,8 @@ class Header extends Component {
     super(props);
 
     this.state = {
-      user: "guest"
+      user: "guest",
+      userInfo: null
     };
   }
 
