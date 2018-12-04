@@ -8,6 +8,8 @@ import LogOut from "./components/LogOut";
 import CreatePostPage from "./components/CreatePostPage";
 import QuoteFinder from "./components/QuoteFinder";
 import PostDetail from "./components/PostDetail";
+import PostEditPage from "./components/PostEditPage";
+import SendEmailPage from "./components/SendEmailPage";
 
 class App extends Component {
   render() {
@@ -21,6 +23,8 @@ class App extends Component {
           <Route exact path="/createpost" component={CreatePostPage} />
           <Route exact path="/quotefinder" component={QuoteFinder} />
           <Route exact path="/post/:_id" component={PostDetail} />
+          <Route exact path="/posteditpage" component={PostEditPage} />
+          <Route exact path="/sendemailpage" component={SendEmailPage} />
         </Switch>
       </div>
     );

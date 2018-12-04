@@ -10,7 +10,8 @@ const baseURL =
 class PostDetail extends Component {
   state = {
     postDetail: [],
-    postUser: null
+    postUser: null,
+    loveCount: null
   };
 
   componentDidMount() {
@@ -21,7 +22,8 @@ class PostDetail extends Component {
         // const postUser = res.data.createdBy._id;
         const postUser = res.data;
         const postDetail = res.data;
-        this.setState({ postDetail, postUser });
+        const loveCount = res.data.likes;
+        this.setState({ postDetail, postUser, loveCount });
       })
       .catch(err => alert(err + "post detail comp did mount"));
   }
@@ -38,7 +40,7 @@ class PostDetail extends Component {
         </div>
 
         <div className="post-detail-actions">
-          <PostLove />
+          <PostLove loveCount={this.state.loveCount} />
           <PostEmail />
           <PostDelete postId={this.props.postId} />
           <PostEdit />

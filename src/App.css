@@ -170,16 +170,15 @@ button {
 
 .post-detail-actions {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 400px;
   margin: 10px 0 50px;
+  align-items: center;
 }
 
-.post-love-send {
-  display: flex;
-}
-
-.post-edit-delete {
+.post-love-send,
+.post-edit-delete,
+.post-love-count {
   display: flex;
 }
 
@@ -187,10 +186,13 @@ button {
   margin: 5px;
 }
 
+.post-detail-actions .link,
 .post-detail-actions button {
   background-color: white;
   color: black;
   padding: 0;
+  text-decoration: none;
+  font-size: 1.5em;
 }
 
 /*-----------------------*/
