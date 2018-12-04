@@ -121,6 +121,7 @@ button {
 .all-posts {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .post-container {
@@ -138,6 +139,10 @@ button {
   padding: 0 4px;
   font-family: "Open Sans Condensed", sans-serif;
   margin: 10px;
+}
+
+.post-container img {
+  width: 300px;
 }
 /*-----------------------*/
 /*------CREATE POST------*/
@@ -157,18 +162,18 @@ button {
 }
 
 .post-builder-container h2 {
-  margin: 50px auto 0;
+  margin: 40px auto 0;
 }
 
 .post-builder-container h3 {
-  margin: 0 auto 50px;
+  margin: 0 auto 40px;
   text-align: center;
 }
 
 .find-quote-link {
   text-decoration: underline;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 /*------SELECTIMAGE component------*/
 .col-2 {
