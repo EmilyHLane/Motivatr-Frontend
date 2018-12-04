@@ -8,10 +8,15 @@ class PostDelete extends Component {
   deletePost = () => {
     const postId = this.props.postId;
     console.log("deleted" + postId);
-    axios.delete(`${baseURL}/api/post/${postId}`).then(res => {
-      console.log(res);
-      res.redirect("/");
-    });
+    axios
+      .delete(`${baseURL}/api/post/${postId}`)
+      .then(res => {
+        console.log(res);
+        res.redirect("/");
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   render() {
