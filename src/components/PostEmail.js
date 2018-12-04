@@ -4,7 +4,9 @@ class PostEmail extends Component {
   render() {
     return (
       <div className="post-love-send>">
-        <i className="far fa-envelope" />
+        <button>
+          <i className="far fa-envelope" />
+        </button>
       </div>
     );
   }

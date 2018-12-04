@@ -20,7 +20,6 @@ class PostDetail extends Component {
       .then(res => {
         // const postUser = res.data.createdBy._id;
         const postUser = res.data;
-        console.log(postUser);
         const postDetail = res.data;
         this.setState({ postDetail, postUser });
       })
@@ -41,7 +40,7 @@ class PostDetail extends Component {
         <div className="post-detail-actions">
           <PostLove />
           <PostEmail />
-          <PostDelete />
+          <PostDelete postId={this.props.postId} />
           <PostEdit />
         </div>
       </div>

@@ -166,10 +166,13 @@ button {
   max-width: 400px;
 }
 
+/*------Post Detail Actions------*/
+
 .post-detail-actions {
   display: flex;
   justify-content: space-evenly;
   width: 400px;
+  margin: 10px 0 50px;
 }
 
 .post-love-send {
@@ -183,6 +186,13 @@ button {
 .post-detail-actions i {
   margin: 5px;
 }
+
+.post-detail-actions button {
+  background-color: white;
+  color: black;
+  padding: 0;
+}
+
 /*-----------------------*/
 /*------CREATE POST------*/
 /*-----------------------*/

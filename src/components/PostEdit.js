@@ -4,7 +4,9 @@ class PostEdit extends Component {
   render() {
     return (
       <div className="post-edit-delete">
-        <i className="fas fa-pencil-alt" />
+        <button>
+          <i className="fas fa-pencil-alt" />
+        </button>
       </div>
     );
   }

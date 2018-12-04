@@ -4,7 +4,9 @@ class PostLove extends Component {
   render() {
     return (
       <div className="post-love-send>">
-        <i className="far fa-heart" />
+        <button>
+          <i className="far fa-heart" />
+        </button>
       </div>
     );
   }
