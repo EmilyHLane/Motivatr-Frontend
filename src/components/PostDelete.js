@@ -12,7 +12,7 @@ class PostDelete extends Component {
       .delete(`${baseURL}/api/post/${postId}`)
       .then(res => {
         console.log(res);
-        res.redirect("/");
+        // res.redirect("/");
       })
       .catch(err => {
         console.log(err);
