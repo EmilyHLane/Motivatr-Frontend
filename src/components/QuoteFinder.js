@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Header from "./Header";
 
 class QuoteFinder extends Component {
   state = {
@@ -13,6 +14,7 @@ class QuoteFinder extends Component {
       .then(res => {
         const QOD = res.data.contents.quotes[0].quote;
         this.setState({ QOD });
+        console.log(res);
       })
       .catch(err => {
         console.log(err);
@@ -24,10 +26,6 @@ class QuoteFinder extends Component {
         const ronSwanson = res.data;
         this.setState({ ronSwanson });
       });
-
-    axios.get("https://api.paperquotes.com/apiv1/qod/").then(res => {
-      console.log(res);
-    });
   }
 
   render() {
@@ -37,6 +35,7 @@ class QuoteFinder extends Component {
     });
     return (
       <div>
+        <Header />
         <h2>Quote Finder</h2>
         <h3>Quote of the Day via They Said So</h3>
         <p>{this.state.QOD}</p>
