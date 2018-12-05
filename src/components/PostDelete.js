@@ -12,6 +12,7 @@ class PostDelete extends Component {
       .delete(`${baseURL}/api/post/${postId}`)
       .then(res => {
         console.log("frontend response >>>", res);
+        this.props.history.push("/");
       })
       .catch(err => {
         console.log(err);
