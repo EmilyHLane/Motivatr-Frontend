@@ -320,9 +320,14 @@ button {
 /*------EMAIL POST-------*/
 /*-----------------------*/
 
-.email-form-container {
+.email-form-container,
+.email-form {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.render-email-form {
   width: 100%;
 }
 
@@ -330,4 +335,9 @@ textarea {
   color: grey;
   border-color: lightgrey;
   min-height: 100px;
+}
+
+.email-cancel-button {
+  background-color: grey;
+  margin: 5px 0;
 }
