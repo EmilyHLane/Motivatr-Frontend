@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import PostLove from "./PostLove";
 import PostEmail from "./PostEmail";
-// import PostDelete from "./PostDelete";
-import PostEdit from "./PostEdit";
 const baseURL = "https://ehl-motivatr-server.herokuapp.com";
 
 class PostDetail extends Component {
@@ -41,6 +40,8 @@ class PostDetail extends Component {
 
   render() {
     const data = this.state.postDetail;
+    const postId = this.props.match.params._id;
+    console.log(postId);
     return (
       <div className="post-detail-container">
         <h2>PostDetail page</h2>
@@ -49,17 +50,17 @@ class PostDetail extends Component {
           <img src={data.image} alt={data.altTxt} />
           <p>{data.textLower}</p>
         </div>
-
         <div className="post-detail-actions">
           <PostLove loveCount={this.state.loveCount} />
           <PostEmail />
-          {/* <PostDelete postId={this.props.match.params._id} /> */}
           <div className="post-edit-delete">
             <button onClick={this.deletePost}>
               <i className="far fa-trash-alt" />
             </button>
+            <Link className="link" to={`/posteditpage/${postId}`}>
+              <i className="fas fa-pencil-alt" />
+            </Link>
           </div>
-          <PostEdit />
         </div>
       </div>
     );

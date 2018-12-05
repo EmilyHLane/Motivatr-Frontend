@@ -24,13 +24,16 @@ class App extends Component {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/createpost" component={CreatePostPage} />
           <Route exact path="/quotefinder" component={QuoteFinder} />
-          {/* <Route exact path="/post/:_id" component={PostDetail} /> */}
           <Route
             exact
             path="/post/:_id"
             render={props => <PostDetail {...props} />}
           />
-          <Route exact path="/posteditpage" component={PostEditPage} />
+          <Route
+            exact
+            path="/posteditpage/:_id"
+            render={props => <PostEditPage {...props} />}
+          />
           <Route exact path="/sendemailpage" component={SendEmailPage} />
         </Switch>
       </div>

@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 
 class PostEditForm extends Component {
   render() {
+    // console.log(this.props);
     const data = this.props;
+
     return (
-      <div className="new-post-container">
+      <div className="new-post-container col-1 edit-post-container">
         <input
           className="post-text-placeholder text-top"
           type="text"

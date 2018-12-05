@@ -197,11 +197,13 @@ button {
 
 /*-----------------------*/
 /*------CREATE POST------*/
+/*------EDIT POST--------*/
 /*-----------------------*/
 
 /*------CreatePostPage component------*/
 
-.create-post-container {
+.create-post-container,
+.post-edit-page {
   display: flex;
 }
 /*------POSTBUILDER component ------*/
@@ -235,7 +237,11 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  /* position: relative; */
+}
+
+.edit-post-container {
+  margin-top: 50px;
 }
 
 .post-image-placeholder {
