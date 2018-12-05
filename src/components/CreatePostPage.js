@@ -3,7 +3,6 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 import SelectImage from "./SelectImage";
 import PostBuilder from "./PostBuilder";
-import Header from "./Header";
 import { getJwt } from "../helpers/jwt";
 
 const baseURL =
