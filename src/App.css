@@ -297,3 +297,20 @@ button {
   width: 300px;
   border: 1px solid grey;
 }
+/*------------------------*/
+/*------QUOTE FINDER------*/
+/*------------------------*/
+
+.quote-finder-container h2 {
+  text-align: center;
+}
+
+.quote-columns {
+  display: flex;
+}
+
+.ron-quotes,
+.jack-quotes {
+  width: 45%;
+  margin: 1% 5%;
+}
