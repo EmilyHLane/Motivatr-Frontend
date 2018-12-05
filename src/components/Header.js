@@ -3,18 +3,16 @@ import { Link, withRouter } from "react-router-dom";
 import { getJwt } from "../helpers/jwt";
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      user: "guest"
-    };
-  }
+  state = {
+    user: ""
+  };
 
   componentDidMount() {
     const jwt = getJwt();
     if (jwt) {
       this.setState({ user: "registered" });
+    } else if (!jwt) {
+      this.setState({ user: "guest" });
     }
   }
 
@@ -36,18 +34,17 @@ class Header extends Component {
         </div>
         <div className="nav-container">
           <nav>
-            {/* if user is logged in */}
-            {this.state.user === "guest" ? (
-              <span>
-                <Link to="/login">Log In</Link>
-                <Link to="/signup">Sign up</Link>
-              </span>
-            ) : (
+            {this.state.user === "registered" ? (
               <span>
                 <Link to="/createpost">Create</Link>
                 <Link to="/logout" onClick={this.handleLogout}>
                   Logout
                 </Link>
+              </span>
+            ) : (
+              <span>
+                <Link to="/login">Log In</Link>
+                <Link to="/signup">Sign up</Link>
               </span>
             )}
           </nav>

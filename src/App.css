@@ -31,6 +31,7 @@ header img {
 .nav-container {
   display: flex;
   margin: 0 20px;
+  align-items: center;
 }
 
 nav {
@@ -67,6 +68,7 @@ a {
   justify-content: center;
   background-color: rgba(206, 206, 206);
   height: 100vh;
+  min-height: 600px;
 }
 .signup-page h2,
 .login-page h2,

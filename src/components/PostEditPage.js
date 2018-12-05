@@ -33,7 +33,6 @@ class PostEditPage extends Component {
 
   //when user edits, set state
   editPost = e => {
-    console.log("editing");
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -42,6 +41,20 @@ class PostEditPage extends Component {
   //update document on submit
   submitEdit = e => {
     e.preventDefault();
+    const postId = this.props.match.params._id;
+    axios
+      .post(`${baseURL}/api/post/${postId}`, {
+        altTxt: this.state.altTxt,
+        image: this.state.image,
+        textUpper: this.state.textUpper,
+        textLower: this.state.textLower
+      })
+      .then(res => {
+        this.props.history.push("/");
+      })
+      .catch(err => {
+        console.log(err, " error at submitEdit");
+      });
   };
 
   render() {
