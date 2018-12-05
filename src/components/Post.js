@@ -17,7 +17,7 @@ const Post = props => {
     );
   });
 
-  return <div className="all-posts">Hello</div>;
+  return <div className="all-posts">{postData}</div>;
 };
 
 export default Post;

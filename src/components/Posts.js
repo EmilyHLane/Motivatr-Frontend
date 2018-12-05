@@ -28,13 +28,7 @@ class Posts extends Component {
   render() {
     return (
       <div>
-        <Post
-          posts={this.state.posts}
-          postId={this.state.postId}
-          clickPost={this.clickPost}
-          goPost={this.goPost}
-          goHome={this.props.goHome}
-        />
+        <Post posts={this.state.posts} postId={this.state.postId} />
       </div>
     );
   }
