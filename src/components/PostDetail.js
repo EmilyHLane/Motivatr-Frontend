@@ -19,6 +19,7 @@ class PostDetail extends Component {
     axios
       .get(`${baseURL}/api/post/${postId}`)
       .then(res => {
+        console.log(res.data);
         // const postUser = res.data.createdBy._id;
         const postUser = res.data;
         const postDetail = res.data;
@@ -32,15 +33,15 @@ class PostDetail extends Component {
     console.log("delete clicked");
     const postId = this.props.postId;
     console.log("deleted: " + postId);
-    axios
-      .delete(`${baseURL}/api/post/${postId}`)
-      .then(res => {
-        console.log("frontend response >>>", res);
-        this.props.history.push("/");
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    // axios
+    //   .delete(`${baseURL}/api/post/${postId}`)
+    //   .then(res => {
+    //     console.log("frontend response >>>", res);
+    //     this.props.history.push("/");
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
   };
 
   render() {
