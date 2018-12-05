@@ -27,15 +27,15 @@ class PostDetail extends Component {
 
   deletePost = () => {
     const postId = this.props.match.params._id;
-    // this.props.history.push("/");
-    axios.delete(`${baseURL}/api/post/${postId}`);
-    // .then(res => {
-    //   console.log("frontend response >>>", res);
-    //   // this.props.history.push("/");
-    // })
-    // .catch(err => {
-    //   console.log(err);
-    // });
+    axios
+      .delete(`${baseURL}/api/post/${postId}`)
+      .then(res => {
+        console.log("frontend response >>>", res);
+        // this.props.history.push("/");
+      })
+      .catch(err => {
+        console.log("frontend response error >>>", err);
+      });
   };
 
   render() {
