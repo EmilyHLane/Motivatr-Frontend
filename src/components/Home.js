@@ -32,7 +32,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Header goHome={this.goHome} />
         <Posts goPost={this.goPost} goHome={this.state.goHome} />
       </div>
     );

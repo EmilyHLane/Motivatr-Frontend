@@ -4,8 +4,7 @@ import PostLove from "./PostLove";
 import PostEmail from "./PostEmail";
 import PostDelete from "./PostDelete";
 import PostEdit from "./PostEdit";
-const baseURL =
-  "https://ehl-motivatr-server.herokuapp.com" || "http://localhost:4000";
+const baseURL = "https://ehl-motivatr-server.herokuapp.com";
 
 class PostDetail extends Component {
   state = {
@@ -15,7 +14,8 @@ class PostDetail extends Component {
   };
 
   componentDidMount() {
-    const postId = this.props.postId;
+    const postId = this.props.match.params._id;
+    console.log(postId);
     axios
       .get(`${baseURL}/api/post/${postId}`)
       .then(res => {

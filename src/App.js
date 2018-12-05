@@ -10,11 +10,13 @@ import QuoteFinder from "./components/QuoteFinder";
 import PostDetail from "./components/PostDetail";
 import PostEditPage from "./components/PostEditPage";
 import SendEmailPage from "./components/SendEmailPage";
+import Header from "./components/Header";
 
 class App extends Component {
   render() {
     return (
       <div>
+        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={LogIn} />
