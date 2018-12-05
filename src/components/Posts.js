@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Post from "./Post";
 import axios from "axios";
+
 const baseURL =
   "https://ehl-motivatr-server.herokuapp.com" || "http://localhost:4000";
 
@@ -17,12 +18,12 @@ class Posts extends Component {
     });
   }
 
-  clickPost = e => {
-    e.preventDefault();
-    const postId = e.target.id;
-    this.setState({ postId });
-    this.props.goPost();
-  };
+  // clickPost = e => {
+  //   e.preventDefault();
+  //   const postId = e.target.id;
+  //   this.setState({ postId });
+  //   this.props.goPost();
+  // };
 
   render() {
     return (
