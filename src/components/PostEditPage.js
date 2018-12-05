@@ -9,27 +9,24 @@ class PostEditPage extends Component {
     postDetail: []
   };
 
-  ComponentDidMount() {
-    console.log("mount post edit page");
-    const postId = this.props.postid;
-
-    console.log(postId, " is post id");
+  componentDidMount() {
+    // console.log("mount post edit page");
+    const postId = this.props.match.params._id;
+    // console.log(postId);
     axios
       .get(`${baseURL}/api/post/${postId}`)
       .then(res => {
-        const postUser = res.data.createdBy;
         const postDetail = res.data;
-        const loveCount = res.data.likes;
-        this.setState({ postDetail, postUser, loveCount });
+        this.setState({ postDetail });
       })
       .catch(err => alert(err + "on PostEditPage mount"));
   }
 
   render() {
-    console.log(this.state);
+    const data = this.state.postDetail;
     return (
       <div className="post-edit-page">
-        <PostEditForm data={this.props} />
+        <PostEditForm data={data} />
         <SelectImage />
       </div>
     );

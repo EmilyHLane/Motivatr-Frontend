@@ -5,8 +5,7 @@ import SelectImage from "./SelectImage";
 import PostBuilder from "./PostBuilder";
 import { getJwt } from "../helpers/jwt";
 
-const baseURL =
-  "https://ehl-motivatr-server.herokuapp.com" || "http://localhost:4000";
+const baseURL = "https://ehl-motivatr-server.herokuapp.com";
 
 class CreatePostPage extends Component {
   state = {

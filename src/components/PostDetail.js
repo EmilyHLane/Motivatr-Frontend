@@ -41,7 +41,6 @@ class PostDetail extends Component {
   render() {
     const data = this.state.postDetail;
     const postId = this.props.match.params._id;
-    console.log(postId);
     return (
       <div className="post-detail-container">
         <h2>PostDetail page</h2>

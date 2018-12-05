@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 class PostEditForm extends Component {
   render() {
-    // console.log(this.props);
-    const data = this.props;
+    const data = this.props.data;
+    console.log(data);
 
     return (
       <div className="new-post-container col-1 edit-post-container">
@@ -14,7 +14,7 @@ class PostEditForm extends Component {
           name="textUpper"
           value={data.textUpper}
           placeholder="Add text here"
-          onChange={this.props.change}
+          onChange={this.props.edit}
         />
         <div className="post-image-placeholder">
           <img src={data.image} alt={data.altTxt} />
@@ -25,9 +25,9 @@ class PostEditForm extends Component {
           name="textLower"
           value={data.textLower}
           placeholder="Add text here"
-          onChange={this.props.change}
+          onChange={this.props.edit}
         />
-        <button className="post-done" onClick={this.props.submit}>
+        <button className="post-done" onClick={this.props.submitEdit}>
           Done
         </button>
         <Link to="/">
