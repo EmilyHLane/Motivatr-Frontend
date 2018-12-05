@@ -11,8 +11,7 @@ class PostDelete extends Component {
     axios
       .delete(`${baseURL}/api/post/${postId}`)
       .then(res => {
-        console.log(res);
-        // res.redirect("/");
+        console.log("frontend response >>>", res);
       })
       .catch(err => {
         console.log(err);
