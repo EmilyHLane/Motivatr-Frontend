@@ -42,7 +42,7 @@ class PostDetail extends Component {
         <div className="post-detail-actions">
           <PostLove loveCount={this.state.loveCount} />
           <PostEmail />
-          <PostDelete postId={this.props.postId} />
+          <PostDelete postId={this.props.match.params._id} />
           <PostEdit />
         </div>
       </div>

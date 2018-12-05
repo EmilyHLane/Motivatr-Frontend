@@ -23,7 +23,8 @@ class Header extends Component {
   }
 
   render() {
-    if (this.props.match.params === "signup") {
+    if (this.props.match.params._id === "signup") {
+      console.log(this.props.match.params);
       return null;
     }
     return (
