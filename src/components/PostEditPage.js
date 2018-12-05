@@ -43,7 +43,7 @@ class PostEditPage extends Component {
     e.preventDefault();
     const postId = this.props.match.params._id;
     axios
-      .post(`${baseURL}/api/post/${postId}`, {
+      .put(`${baseURL}/api/post/${postId}`, {
         altTxt: this.state.altTxt,
         image: this.state.image,
         textUpper: this.state.textUpper,
