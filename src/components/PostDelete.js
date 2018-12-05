@@ -7,7 +7,7 @@ const baseURL = "https://ehl-motivatr-server.herokuapp.com";
 class PostDelete extends Component {
   deletePost = () => {
     const postId = this.props.postId;
-    console.log("deleted" + postId);
+    console.log("deleted: " + postId);
     axios
       .delete(`${baseURL}/api/post/${postId}`)
       .then(res => {
