@@ -9,7 +9,7 @@ import CreatePostPage from "./components/CreatePostPage";
 import QuoteFinder from "./components/QuoteFinder";
 import PostDetail from "./components/PostDetail";
 import PostEditPage from "./components/PostEditPage";
-import SendEmailPage from "./components/SendEmailPage";
+import EmailForm from "./components/EmailForm";
 import Header from "./components/Header";
 
 class App extends Component {
@@ -34,7 +34,7 @@ class App extends Component {
             path="/posteditpage/:_id"
             render={props => <PostEditPage {...props} />}
           />
-          <Route exact path="/sendemailpage" component={SendEmailPage} />
+          <Route exact path="/sendemailpage" component={EmailForm} />
         </Switch>
       </div>
     );

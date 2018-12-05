@@ -92,7 +92,8 @@ a {
   margin: 0 60px 30px;
 }
 
-input {
+input,
+textarea {
   font-size: 1em;
   padding: 10px;
   margin-bottom: 5px;
@@ -189,7 +190,7 @@ button {
 }
 
 .post-detail-actions .link,
-.post-detail-actions button {
+.actions-button {
   background-color: white;
   color: black;
   padding: 0;
@@ -199,6 +200,7 @@ button {
 
 /*-----------------------*/
 /*------CREATE POST------*/
+/*----------&------------*/
 /*------EDIT POST--------*/
 /*-----------------------*/
 
@@ -297,9 +299,8 @@ button {
   width: 300px;
   border: 1px solid grey;
 }
-/*------------------------*/
-/*------QUOTE FINDER------*/
-/*------------------------*/
+
+/*------QUOTE FINDER component ------*/
 
 .quote-finder-container h2 {
   text-align: center;
@@ -313,4 +314,20 @@ button {
 .jack-quotes {
   width: 45%;
   margin: 1% 5%;
+}
+
+/*-----------------------*/
+/*------EMAIL POST-------*/
+/*-----------------------*/
+
+.email-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+textarea {
+  color: grey;
+  border-color: lightgrey;
+  min-height: 100px;
 }

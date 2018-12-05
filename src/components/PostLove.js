@@ -6,7 +6,7 @@ class PostLove extends Component {
     return (
       <div className="post-love-send>">
         <div className="post-love-count">
-          <button>
+          <button className="actions-button">
             <i className="far fa-heart" />
           </button>
           <p className="love-count">{loveCount}</p>

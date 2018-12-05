@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import PostLove from "./PostLove";
 import PostEmail from "./PostEmail";
+import EmailForm from "./EmailForm";
 const baseURL = "https://ehl-motivatr-server.herokuapp.com";
 
 class PostDetail extends Component {
@@ -44,23 +45,32 @@ class PostDetail extends Component {
     return (
       <div className="post-detail-container">
         <h2>PostDetail page</h2>
+
         <div className="post-detail-post">
           <p>{data.textUpper}</p>
           <img src={data.image} alt={data.altTxt} />
           <p>{data.textLower}</p>
         </div>
+
         <div className="post-detail-actions">
           <PostLove loveCount={this.state.loveCount} />
           <PostEmail />
           <div className="post-edit-delete">
-            <button onClick={this.deletePost}>
+            <button className="actions-button" onClick={this.deletePost}>
               <i className="far fa-trash-alt" />
             </button>
-            <Link className="link" to={`/posteditpage/${postId}`}>
+            <Link
+              className="link actions-button"
+              to={`/posteditpage/${postId}`}
+            >
               <i className="fas fa-pencil-alt" />
             </Link>
           </div>
         </div>
+
+        {/* if user selects email icon */}
+        <div className="render-email-form" />
+        <EmailForm />
       </div>
     );
   }
