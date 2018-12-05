@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import { Redirect } from "react-router-dom";
-// const baseURL = "http://localhost:4000";
 const baseURL = "https://ehl-motivatr-server.herokuapp.com";
 
 class PostDelete extends Component {

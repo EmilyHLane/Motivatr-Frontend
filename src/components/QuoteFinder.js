@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Header from "./Header";
 
 class QuoteFinder extends Component {
   state = {
@@ -35,7 +34,6 @@ class QuoteFinder extends Component {
     });
     return (
       <div>
-        <Header />
         <h2>Quote Finder</h2>
         <h3>Quote of the Day via They Said So</h3>
         <p>{this.state.QOD}</p>

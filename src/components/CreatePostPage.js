@@ -74,7 +74,6 @@ class CreatePostPage extends Component {
   render() {
     return (
       <div className="create-post-page">
-        <Header />
         <div className="create-post-container">
           <PostBuilder
             textLower={this.state.textLower}

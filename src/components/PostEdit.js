@@ -31,9 +31,6 @@ class PostEdit extends Component {
         <Link className="link" to="/posteditpage">
           <i className="fas fa-pencil-alt" />
         </Link>
-        <button onClick={this.editPost}>
-          <i className="fas fa-pencil-alt" />
-        </button>
       </div>
     );
   }
