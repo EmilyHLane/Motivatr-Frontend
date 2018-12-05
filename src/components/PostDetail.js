@@ -15,13 +15,10 @@ class PostDetail extends Component {
 
   componentDidMount() {
     const postId = this.props.match.params._id;
-    console.log(postId);
     axios
       .get(`${baseURL}/api/post/${postId}`)
       .then(res => {
-        console.log(res.data);
-        // const postUser = res.data.createdBy._id;
-        const postUser = res.data;
+        const postUser = res.data.createdBy;
         const postDetail = res.data;
         const loveCount = res.data.likes;
         this.setState({ postDetail, postUser, loveCount });
@@ -30,18 +27,16 @@ class PostDetail extends Component {
   }
 
   deletePost = () => {
-    console.log("delete clicked");
-    const postId = this.props.postId;
-    console.log("deleted: " + postId);
-    // axios
-    //   .delete(`${baseURL}/api/post/${postId}`)
-    //   .then(res => {
-    //     console.log("frontend response >>>", res);
-    //     this.props.history.push("/");
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   });
+    const postId = this.props.match.params._id;
+    axios
+      .delete(`${baseURL}/api/post/${postId}`)
+      .then(res => {
+        console.log("frontend response >>>", res);
+        this.props.history.push("/");
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   render() {
