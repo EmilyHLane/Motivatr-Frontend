@@ -31,7 +31,7 @@ class PostDetail extends Component {
       .delete(`${baseURL}/api/post/${postId}`)
       .then(res => {
         console.log("frontend response >>>", res);
-        // this.props.history.push("/");
+        this.props.history.push("/");
       })
       .catch(err => {
         console.log("frontend response error >>>", err);
