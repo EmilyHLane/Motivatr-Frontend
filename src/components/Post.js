@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PostDetail from "./PostDetail";
 
 const Post = props => {
   const getData = props.posts;

@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import Post from "./Post";
 import axios from "axios";
 
-const baseURL =
-  "https://ehl-motivatr-server.herokuapp.com" || "http://localhost:4000";
+const baseURL = "https://ehl-motivatr-server.herokuapp.com";
 
 class Posts extends Component {
   state = {
@@ -17,13 +16,6 @@ class Posts extends Component {
       this.setState({ posts });
     });
   }
-
-  // clickPost = e => {
-  //   e.preventDefault();
-  //   const postId = e.target.id;
-  //   this.setState({ postId });
-  //   this.props.goPost();
-  // };
 
   render() {
     return (

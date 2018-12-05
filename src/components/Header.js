@@ -23,38 +23,32 @@ class Header extends Component {
   }
 
   render() {
-    if (this.state.user === "guest") {
-      return (
-        <header className="small-header big-header">
-          <div className="logo-name-container">
-            <Link to="/" onClick={this.props.goHome}>
-              <h1>motivatr</h1>
-            </Link>
-          </div>
-          <div className="nav-container">
-            <nav>
-              {/* if user is not logged in */}
-              <Link to="/login">Log In</Link>
-              <Link to="/signup">Sign up</Link>
-            </nav>
-          </div>
-        </header>
-      );
+    if (this.props.match.params === "signup") {
+      return null;
     }
     return (
       <header>
         <div className="logo-name-container">
-          <Link to="/" onClick={this.props.goHome}>
+          <Link to="/">
             <h1>motivatr</h1>
           </Link>
         </div>
         <div className="nav-container">
           <nav>
             {/* if user is logged in */}
-            <Link to="/createpost">Create</Link>
-            <Link to="/logout" onClick={this.handleLogout}>
-              Logout
-            </Link>
+            {this.state.user === "guest" ? (
+              <span>
+                <Link to="/login">Log In</Link>
+                <Link to="/signup">Sign up</Link>
+              </span>
+            ) : (
+              <span>
+                <Link to="/createpost">Create</Link>
+                <Link to="/logout" onClick={this.handleLogout}>
+                  Logout
+                </Link>
+              </span>
+            )}
           </nav>
         </div>
       </header>
