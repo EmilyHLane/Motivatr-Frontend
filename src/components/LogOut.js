@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 class LogOut extends Component {
   render() {
     return (
-      <div>
-        <h2>Logged out</h2>
+      <div className="log-out-container">
+        <h2>You are logged out</h2>
         <Link to="/login">Log In</Link>
       </div>
     );

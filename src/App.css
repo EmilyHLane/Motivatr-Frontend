@@ -123,6 +123,13 @@ button {
   font-weight: bold;
 }
 
+.log-out-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
 /*------HOMEPAGE - POST component------ */
 .all-posts {
   display: flex;
