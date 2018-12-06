@@ -75,7 +75,8 @@ class PostDetail extends Component {
         textUpper: data.textUpper,
         textLower: data.textLower,
         image: data.image,
-        altTxt: data.altTxt
+        altTxt: data.altTxt,
+        subject: this.state.subject
       })
       .then(res => {
         console.log("sent - make msg for user");
