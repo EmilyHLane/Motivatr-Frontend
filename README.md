@@ -65,8 +65,13 @@ Motivatr is an app designed to help you and your friends stay motivated to achie
 1. Fork this repo
 2. Fork the backend [repo](https://github.com/EmilyHLane/WDI-finalProject-Motivatr)
 3. Install NPM node modules and other dependencies:
-   - \$ npm install express jwt bcrypt
+   - express
+   - jwt
+   - bcrypt
+   - nodemailer
+   - axios
+   - react-router-dom
 
-4) Get an API key from Unsplash, save in a hidden file, update the KEY variable in SelectImage component.
-5) Create your own secret for JWT, save in a hidden file, update references to SECRET_OR_KEY in userController and server.js files.
+4) Get an API key from Unsplash, save in a hidden file, update frontend KEY variable in SelectImage component.
+5) Create your own secret for JWT, save in a hidden file, update backend references to SECRET_OR_KEY in userController and server.js files.
 6) Update baseURL environment variables in front end components, and in backend models>index.js.
