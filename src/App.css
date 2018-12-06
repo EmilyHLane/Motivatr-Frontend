@@ -12,11 +12,14 @@ header {
   display: flex;
   justify-content: space-between;
   margin: 0;
-  /* height: 80vh; */
   background-image: url("https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8ccfcc13bfcdfca6f54a8e043ffbe075&w=1000&q=80");
   background-size: cover;
   border-bottom: solid 1px rgb(43, 173, 229);
   border-bottom-color: rgb(226, 63, 18);
+}
+
+.big-header {
+  height: 80vh;
 }
 
 .small-header {
@@ -31,11 +34,11 @@ header img {
 .nav-container {
   display: flex;
   margin: 0 20px;
-  align-items: center;
 }
 
 nav {
   display: flex;
+  margin-top: 25px;
 }
 
 h1 {

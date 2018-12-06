@@ -25,8 +25,12 @@ class Header extends Component {
       console.log(this.props.match.params);
       return null;
     }
+    console.log(this.props.location.pathname);
+    const isHome = this.props.location.pathname === "/";
+    console.log(isHome);
+    // {isHome? className="big-header" : className="small-header"
     return (
-      <header>
+      <header className={isHome ? "big-header" : "small-header"}>
         <div className="logo-name-container">
           <Link to="/">
             <h1>motivatr</h1>
