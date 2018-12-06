@@ -58,6 +58,13 @@ class PostDetail extends Component {
   sendEmail = e => {
     e.preventDefault();
     console.log("send email clicked!");
+    axios.post(`${baseURL}/send`, {
+      //request body
+      toEmail: "emailsentfrom@email.com",
+      fromEmail: "emailreceived@email.com",
+      emailMessage: "Hey you",
+      postContent: "how do i do this"
+    });
     //call to send email
   };
 

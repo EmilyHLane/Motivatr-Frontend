@@ -5,15 +5,19 @@ class EmailForm extends Component {
     return (
       <div className="email-form-container">
         <h2>Send to a friend</h2>
-        <form className="email-form">
+        <form className="email-form" action="send" method="POST">
           <input type="email" name="toEmail" placeholder="email address" />
           <input
             type="email"
             name="fromEmail"
             placeholder="your email address"
           />
-          <textarea>Add a note</textarea>
-          <button className="email-send-button" onClick={this.props.sendEmail}>
+          <textarea name="emailMessage">Add a note</textarea>
+          <button
+            type="submit"
+            className="email-send-button"
+            onClick={this.props.sendEmail}
+          >
             Send
           </button>
           <button
