@@ -12,7 +12,11 @@ class PostDetail extends Component {
     postDetail: [],
     postUser: null,
     loveCount: null,
-    openEmailForm: null
+    openEmailForm: null,
+    sendTo: "",
+    from: "",
+    message: "",
+    subject: ""
   };
 
   componentDidMount() {
@@ -49,8 +53,11 @@ class PostDetail extends Component {
   };
 
   //get email content from user input
-  addEmailContent = () => {
-    //set state for email content?
+  addEmailContent = e => {
+    //set state for email content
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   };
 
   //send email
@@ -58,14 +65,22 @@ class PostDetail extends Component {
   sendEmail = e => {
     e.preventDefault();
     console.log("send email clicked!");
-    axios.post(`${baseURL}/send`, {
-      //request body
-      toEmail: "emailsentfrom@email.com",
-      fromEmail: "emailreceived@email.com",
-      emailMessage: "Hey you",
-      postContent: "how do i do this"
-    });
-    //call to send email
+    console.log(this.state);
+    const data = this.state.postDetail;
+    console.log(data);
+    axios
+      .post(`${baseURL}/send`, {
+        //request body
+        message: this.state.message,
+        textUpper: data.textUpper,
+        textLower: data.textLower,
+        image: data.image,
+        altTxt: data.altTxt
+      })
+      .then(res => {
+        console.log("sent - make msg for user");
+      })
+      .catch(err => console.log(err, "send email error frontend"));
   };
 
   //when user clicks cancel, close email form without sending email
@@ -111,6 +126,8 @@ class PostDetail extends Component {
             <EmailForm
               sendEmail={this.sendEmail}
               cancelEmail={this.cancelEmail}
+              addEmailContent={this.addEmailContent}
+              emailData={this.state}
             />
           </span>
         ) : (
