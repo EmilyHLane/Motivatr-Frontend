@@ -21,14 +21,13 @@ class Header extends Component {
   }
 
   render() {
-    if (this.props.match.params._id === "signup") {
-      console.log(this.props.match.params);
+    if (
+      this.props.location.pathname === "/signup" ||
+      this.props.location.pathname === "/login"
+    ) {
       return null;
     }
-    console.log(this.props.location.pathname);
     const isHome = this.props.location.pathname === "/";
-    console.log(isHome);
-    // {isHome? className="big-header" : className="small-header"
     return (
       <header className={isHome ? "big-header" : "small-header"}>
         <div className="logo-name-container">
