@@ -136,7 +136,8 @@ button {
   margin: 10px;
 }
 
-.post-container p {
+.post-container p,
+.post-detail-post p {
   text-align: center;
   font-size: 1.5em;
   padding: 0 4px;
@@ -166,14 +167,14 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 400px;
+  max-width: 404px;
+  border: 2px solid rgb(226, 63, 18);
 }
 
 /*------Post Detail Actions------*/
 
 .post-detail-actions {
   display: flex;
-  justify-content: space-between;
   width: 400px;
   margin: 10px 0 50px;
   align-items: center;
@@ -198,6 +199,9 @@ button {
   font-size: 1.5em;
 }
 
+.love-count {
+  margin-right: 20px;
+}
 /*-----------------------*/
 /*------CREATE POST------*/
 /*----------&------------*/

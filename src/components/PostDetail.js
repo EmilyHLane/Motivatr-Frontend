@@ -13,7 +13,7 @@ class PostDetail extends Component {
   state = {
     postDetail: [],
     postUser: null,
-    currentUser: null,
+    userId: null,
     loveCount: null,
     openEmailForm: null,
     sendTo: "",
@@ -104,7 +104,7 @@ class PostDetail extends Component {
   render() {
     const data = this.state.postDetail;
     const postId = this.props.match.params._id;
-    const currUser = this.state.currentUser;
+    const currUser = this.state.userId;
     console.log(currUser, "is current user");
     const postUser = this.state.postUser;
     console.log(postUser, "is post user");
