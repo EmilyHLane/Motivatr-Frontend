@@ -21,18 +21,23 @@ class SignUp extends Component {
 
   submit(e) {
     e.preventDefault();
-    axios
-      .post(`${baseURL}/api/user`, {
-        email: this.state.email,
-        password: this.state.password,
-        username: this.state.username
-      })
-      .then(res => {
-        this.props.history.push("/login");
-      })
-      .catch(err => {
-        alert(err);
-      });
+    if (this.state.password === "password") {
+      alert('Password cannot be "password" ');
+      this.setState({ password: "" });
+    } else {
+      axios
+        .post(`${baseURL}/api/user`, {
+          email: this.state.email,
+          password: this.state.password,
+          username: this.state.username
+        })
+        .then(res => {
+          this.props.history.push("/login");
+        })
+        .catch(err => {
+          alert(err);
+        });
+    }
   }
 
   render() {
@@ -51,6 +56,7 @@ class SignUp extends Component {
               value={this.state.email}
               placeholder="your email address"
               onChange={e => this.change(e)}
+              required
             />
             <label>password</label>
             <input
@@ -59,6 +65,8 @@ class SignUp extends Component {
               value={this.state.password}
               placeholder="create a password"
               onChange={e => this.change(e)}
+              minLength="8"
+              required
             />
             <label>username</label>
             <input
@@ -67,6 +75,7 @@ class SignUp extends Component {
               value={this.state.username}
               placeholder="create a username"
               onChange={e => this.change(e)}
+              required
             />
             <button>Submit</button>
           </form>

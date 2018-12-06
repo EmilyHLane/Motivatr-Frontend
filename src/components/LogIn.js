@@ -14,34 +14,40 @@ class Login extends Component {
     };
   }
 
+  //get user input
   change(e) {
     this.setState({
       [e.target.name]: e.target.value
     });
   }
 
+  //sign in with email and password - backend validation and pw encryption
   submit(e) {
     e.preventDefault();
-    axios
-      .post(`${baseURL}/api/user/login`, {
-        email: this.state.email,
-        password: this.state.password
-      })
-      .then(res => {
-        console.log(res);
-        const { token } = res.data;
-        localStorage.setItem("token", token);
-        //pass token in header
-        setAuthToken(token);
-        if (token) {
-          this.props.history.push("/");
-        } else {
-          alert("sorry try again");
-        }
-      })
-      .catch(err => {
-        alert("wrong email or password, try again");
-      });
+    if (this.state.email !== "" && this.state.password !== "") {
+      axios
+        .post(`${baseURL}/api/user/login`, {
+          email: this.state.email,
+          password: this.state.password
+        })
+        .then(res => {
+          console.log(res);
+          const { token } = res.data;
+          localStorage.setItem("token", token);
+          //pass token in header
+          setAuthToken(token);
+          if (token) {
+            this.props.history.push("/");
+          } else {
+            alert("sorry try again");
+          }
+        })
+        .catch(err => {
+          alert("wrong email or password, try again");
+        });
+    } else {
+      alert("Please enter your email and password.");
+    }
   }
 
   render() {
