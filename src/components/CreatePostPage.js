@@ -17,35 +17,47 @@ class CreatePostPage extends Component {
     likes: 0
   };
 
+  //gets user input
   change = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
+  //adds clicked image
   clickImg = e => {
     const newImage = e.target.src;
     const altTxt = e.target.alt;
     this.setState({ image: newImage, altTxt });
   };
 
+  //creates new post
   submit = e => {
     e.preventDefault();
-    axios
-      .post(`${baseURL}/api/post`, {
-        userId: this.state.userId,
-        textUpper: this.state.textUpper,
-        image: this.state.image,
-        altTxt: this.state.altTxt,
-        textLower: this.state.textLower,
-        likes: this.state.likes
-      })
-      .then(res => {
-        this.props.history.push("/");
-      })
-      .catch(err => {
-        alert(err);
-      });
+    if (
+      this.state.image !==
+        "https://dummyimage.com/400/e0e0e0/3d3d3d&text=select+an+image" &&
+      this.state.image !== null &&
+      this.state.textUpper !== ""
+    ) {
+      axios
+        .post(`${baseURL}/api/post`, {
+          userId: this.state.userId,
+          textUpper: this.state.textUpper,
+          image: this.state.image,
+          altTxt: this.state.altTxt,
+          textLower: this.state.textLower,
+          likes: this.state.likes
+        })
+        .then(res => {
+          this.props.history.push("/");
+        })
+        .catch(err => {
+          alert("Please add an image and upper text");
+        });
+    } else {
+      alert("Please add an image and upper text");
+    }
   };
 
   cancel = e => {
