@@ -101,6 +101,13 @@ class PostDetail extends Component {
     this.setState({ openEmailForm: false });
   };
 
+  addLove = () => {
+    const loveCount = this.state.loveCount;
+    const addLove = parseInt(loveCount) + 1;
+    console.log(addLove);
+    //axios put update document
+  };
+
   render() {
     const data = this.state.postDetail;
     const postId = this.props.match.params._id;
@@ -117,7 +124,7 @@ class PostDetail extends Component {
           <p>{data.textLower}</p>
         </div>
         <div className="post-detail-actions">
-          <PostLove loveCount={this.state.loveCount} />
+          <PostLove loveCount={this.state.loveCount} addLove={this.addLove} />
 
           <PostEmail onEmail={this.onEmail} />
 
