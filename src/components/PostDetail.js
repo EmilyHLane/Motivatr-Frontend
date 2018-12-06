@@ -33,7 +33,7 @@ class PostDetail extends Component {
       console.log("user is not logged in");
     }
 
-    //show single post
+    //show this post
     const postId = this.props.match.params._id;
     axios
       .get(`${baseURL}/api/post/${postId}`)
@@ -73,7 +73,7 @@ class PostDetail extends Component {
   };
 
   //send email
-  //add validation for no empty fields
+  //TODO: add validation for no empty fields
   sendEmail = e => {
     e.preventDefault();
     console.log("send email clicked!");
@@ -102,10 +102,17 @@ class PostDetail extends Component {
   };
 
   addLove = () => {
-    const loveCount = this.state.loveCount;
-    const addLove = parseInt(loveCount) + 1;
-    console.log(addLove);
-    //axios put update document
+    const postId = this.props.match.params._id;
+    const loveCount = parseInt(this.state.loveCount) + 1;
+    this.setState({ loveCount });
+    axios
+      .put(`${baseURL}/api/post/${postId}`, {
+        likes: this.state.loveCount
+      })
+      .then(res => {
+        console.log(this.state.loveCount);
+      })
+      .catch(err => alert(err + "on likes axios frontend"));
   };
 
   render() {
