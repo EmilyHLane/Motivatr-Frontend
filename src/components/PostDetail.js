@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import jwt_decode from "jwt-decode";
+import { getJwt } from "../helpers/jwt";
 import { Link } from "react-router-dom";
 import PostLove from "./PostLove";
 import PostEmail from "./PostEmail";
@@ -11,6 +13,7 @@ class PostDetail extends Component {
   state = {
     postDetail: [],
     postUser: null,
+    currentUser: null,
     loveCount: null,
     openEmailForm: null,
     sendTo: "",
@@ -20,6 +23,16 @@ class PostDetail extends Component {
   };
 
   componentDidMount() {
+    //get current user id
+    const jwt = getJwt();
+    if (jwt) {
+      const userInfo = jwt_decode(localStorage.getItem("token"));
+      const userId = userInfo.id;
+      this.setState({ userId });
+    } else {
+      console.log("user is not logged in");
+    }
+
     //show single post
     const postId = this.props.match.params._id;
     axios
@@ -39,7 +52,6 @@ class PostDetail extends Component {
     axios
       .delete(`${baseURL}/api/post/${postId}`)
       .then(res => {
-        console.log("frontend response >>>", res);
         this.props.history.push("/");
       })
       .catch(err => {
@@ -67,7 +79,6 @@ class PostDetail extends Component {
     console.log("send email clicked!");
     console.log(this.state);
     const data = this.state.postDetail;
-    console.log(data);
     axios
       .post(`${baseURL}/send`, {
         //request body
@@ -79,7 +90,7 @@ class PostDetail extends Component {
         subject: this.state.subject
       })
       .then(res => {
-        console.log("sent - make msg for user");
+        this.props.history.push("/");
       })
       .catch(err => console.log(err, "send email error frontend"));
   };
@@ -93,6 +104,10 @@ class PostDetail extends Component {
   render() {
     const data = this.state.postDetail;
     const postId = this.props.match.params._id;
+    const currUser = this.state.currentUser;
+    console.log(currUser, "is current user");
+    const postUser = this.state.postUser;
+    console.log(postUser, "is post user");
     return (
       <div className="post-detail-container">
         <h2>PostDetail page</h2>
@@ -106,20 +121,26 @@ class PostDetail extends Component {
 
           <PostEmail onEmail={this.onEmail} />
 
-          <div className="post-edit-delete">
-            <button className="actions-button" onClick={this.deletePost}>
-              <i className="far fa-trash-alt" />
-            </button>
-          </div>
+          {currUser === postUser ? (
+            <span>
+              <div className="post-edit-delete">
+                <button className="actions-button" onClick={this.deletePost}>
+                  <i className="far fa-trash-alt" />
+                </button>
+              </div>
 
-          <div className="post-edit-delete">
-            <Link
-              className="link actions-button"
-              to={`/posteditpage/${postId}`}
-            >
-              <i className="fas fa-pencil-alt" />
-            </Link>
-          </div>
+              <div className="post-edit-delete">
+                <Link
+                  className="link actions-button"
+                  to={`/posteditpage/${postId}`}
+                >
+                  <i className="fas fa-pencil-alt" />
+                </Link>
+              </div>
+            </span>
+          ) : (
+            <div />
+          )}
         </div>
 
         {this.state.openEmailForm === true ? (

@@ -5,6 +5,7 @@ class Comments extends Component {
     return (
       <div>
         <h2>comments here</h2>
+        <p>Comments coming soon</p>
       </div>
     );
   }
