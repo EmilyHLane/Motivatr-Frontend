@@ -10,9 +10,12 @@ class Login extends Component {
     password: ""
   };
 
+  componentDidUpdate() {
+    console.log("login component updated");
+  }
+
   //get user input
   change = e => {
-    console.log(this);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -20,9 +23,10 @@ class Login extends Component {
 
   //sign in with email and password - backend validation and pw encryption
   submit = e => {
+    console.log("clicked submit");
     e.preventDefault();
-    console.log(this.state);
     if (this.state.email !== "" && this.state.password !== "") {
+      console.log("email and pw not null");
       axios
         .post(`${baseURL}/api/user/login`, {
           email: this.state.email,
