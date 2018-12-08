@@ -16,11 +16,23 @@ class Header extends Component {
     }
   }
 
+  componentDidUpdate() {
+    const jwt = getJwt();
+    if (!jwt && this.state.user === "registered") {
+      this.setState({ user: "guest" });
+    } else if (jwt && this.state.user === "guest") {
+      this.setState({ user: "registered" });
+    } else if (jwt && this.state.user === "") {
+      this.setState({ user: "registered" });
+    }
+  }
+
   handleLogout() {
     return localStorage.removeItem("token");
   }
 
   render() {
+    console.log(this.state.user);
     if (
       this.props.location.pathname === "/signup" ||
       this.props.location.pathname === "/login"

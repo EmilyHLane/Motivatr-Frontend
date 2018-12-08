@@ -2,28 +2,26 @@ import React, { Component } from "react";
 import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
 import { Link } from "react-router-dom";
-const baseURL =
-  "https://ehl-motivatr-server.herokuapp.com" || "http://localhost:4000";
+const baseURL = "https://ehl-motivatr-server.herokuapp.com";
 
 class Login extends Component {
-  constructor() {
-    super();
-    this.state = {
-      email: "",
-      password: ""
-    };
-  }
+  state = {
+    email: "",
+    password: ""
+  };
 
   //get user input
-  change(e) {
+  change = e => {
+    console.log(this);
     this.setState({
       [e.target.name]: e.target.value
     });
-  }
+  };
 
   //sign in with email and password - backend validation and pw encryption
-  submit(e) {
+  submit = e => {
     e.preventDefault();
+    console.log(this.state);
     if (this.state.email !== "" && this.state.password !== "") {
       axios
         .post(`${baseURL}/api/user/login`, {
@@ -31,7 +29,6 @@ class Login extends Component {
           password: this.state.password
         })
         .then(res => {
-          console.log(res);
           const { token } = res.data;
           localStorage.setItem("token", token);
           //pass token in header
@@ -43,12 +40,12 @@ class Login extends Component {
           }
         })
         .catch(err => {
-          alert("wrong email or password, try again");
+          alert(err);
         });
     } else {
       alert("Please enter your email and password.");
     }
-  }
+  };
 
   render() {
     return (
@@ -58,14 +55,14 @@ class Login extends Component {
           <Link to="/" className="close-button">
             x
           </Link>
-          <form className="login-form" onSubmit={e => this.submit(e)}>
+          <form className="login-form" onSubmit={this.submit}>
             <label>email</label>
             <input
               type="email"
               name="email"
               value={this.state.email}
               placeholder="email"
-              onChange={e => this.change(e)}
+              onChange={this.change}
             />
             <label>password</label>
             <input
@@ -73,7 +70,7 @@ class Login extends Component {
               name="password"
               value={this.state.password}
               placeholder="password"
-              onChange={e => this.change(e)}
+              onChange={this.change}
             />
             <button>submit</button>
           </form>
