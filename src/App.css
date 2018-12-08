@@ -212,6 +212,14 @@ button {
 .love-count {
   margin-right: 20px;
 }
+
+.post-edit-and-delete {
+  display: flex;
+}
+
+.edit-icon {
+  margin: 0 20px;
+}
 /*-----------------------*/
 /*------CREATE POST------*/
 /*----------&------------*/

@@ -119,9 +119,7 @@ class PostDetail extends Component {
     const data = this.state.postDetail;
     const postId = this.props.match.params._id;
     const currUser = this.state.userId;
-    console.log(currUser, "is current user");
     const postUser = this.state.postUser;
-    console.log(postUser, "is post user");
     return (
       <div className="post-detail-container">
         <h2>PostDetail page</h2>
@@ -136,20 +134,20 @@ class PostDetail extends Component {
           <PostEmail onEmail={this.onEmail} />
 
           {currUser === postUser ? (
-            <span>
-              <div className="post-edit-delete">
-                <button className="actions-button" onClick={this.deletePost}>
-                  <i className="far fa-trash-alt" />
-                </button>
-              </div>
-
+            <span className="post-edit-and-delete">
               <div className="post-edit-delete">
                 <Link
-                  className="link actions-button"
+                  className="link actions-button edit-icon"
                   to={`/posteditpage/${postId}`}
                 >
                   <i className="fas fa-pencil-alt" />
                 </Link>
+              </div>
+
+              <div className="post-edit-delete">
+                <button className="actions-button" onClick={this.deletePost}>
+                  <i className="far fa-trash-alt" />
+                </button>
               </div>
             </span>
           ) : (
