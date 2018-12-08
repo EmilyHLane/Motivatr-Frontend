@@ -17,13 +17,12 @@ class Header extends Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state.user);
     const jwt = getJwt();
     if (!jwt && this.state.user === "registered") {
       this.setState({ user: "guest" });
     } else if (jwt && this.state.user === "guest") {
       this.setState({ user: "registered" });
-    } else console.log(this.state.user);
+    }
   }
 
   handleLogout() {

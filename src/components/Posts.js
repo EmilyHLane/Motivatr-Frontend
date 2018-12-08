@@ -15,22 +15,16 @@ class Posts extends Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state.posts.length);
     if (this.state.posts.length === 0) {
-      console.log("no posts");
       this.getPosts();
     }
   }
 
   getPosts = () => {
-    axios
-      .get(`${baseURL}/api/post/`)
-      .then(res => {
-        console.log(res.status);
-        const posts = res.data;
-        this.setState({ posts });
-      })
-      .catch(err => console.log(err));
+    axios.get(`${baseURL}/api/post/`).then(res => {
+      const posts = res.data;
+      this.setState({ posts });
+    });
   };
 
   render() {

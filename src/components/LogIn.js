@@ -10,10 +10,6 @@ class Login extends Component {
     password: ""
   };
 
-  componentDidUpdate() {
-    console.log("login component updated");
-  }
-
   //get user input
   change = e => {
     this.setState({
@@ -23,32 +19,26 @@ class Login extends Component {
 
   //sign in with email and password - backend validation and pw encryption
   submit = e => {
-    console.log("clicked submit");
     e.preventDefault();
     if (this.state.email !== "" && this.state.password !== "") {
-      console.log("email and pw not null");
       axios
         .post(`${baseURL}/api/user/login`, {
           email: this.state.email,
           password: this.state.password
         })
         .then(res => {
-          console.log("made it 1");
           const { token } = res.data;
-          console.log("made it 2", res);
           localStorage.setItem("token", token);
           //pass token in header
-          console.log("made it here 3");
           setAuthToken(token);
           if (token) {
             this.props.history.push("/");
-            console.log("made it her 4");
           } else {
             alert("sorry try again");
           }
         })
         .catch(err => {
-          alert(err, "frontend login error after submit post request");
+          alert(err);
         });
     } else {
       alert("Please enter your email and password.");

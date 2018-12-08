@@ -19,10 +19,6 @@ class Home extends Component {
     }
   }
 
-  componentDidUpdate() {
-    console.log("home component updated");
-  }
-
   render() {
     return (
       <div>
