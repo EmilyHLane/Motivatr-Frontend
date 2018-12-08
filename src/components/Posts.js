@@ -23,12 +23,14 @@ class Posts extends Component {
   }
 
   getPosts = () => {
-    axios.get(`${baseURL}/api/post/`).then(res => {
-      console.log(res.status);
-      const posts = res.data;
-      this.setState({ posts });
-    });
-    console.log("getposts called");
+    axios
+      .get(`${baseURL}/api/post/`)
+      .then(res => {
+        console.log(res.status);
+        const posts = res.data;
+        this.setState({ posts });
+      })
+      .catch(err => console.log(err));
   };
 
   render() {
