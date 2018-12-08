@@ -11,11 +11,25 @@ class Posts extends Component {
   };
 
   componentDidMount() {
+    this.getPosts();
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.posts.length);
+    if (this.state.posts.length === 0) {
+      console.log("no posts");
+      this.getPosts();
+    }
+  }
+
+  getPosts = () => {
     axios.get(`${baseURL}/api/post/`).then(res => {
+      console.log(res.status);
       const posts = res.data;
       this.setState({ posts });
     });
-  }
+    console.log("getposts called");
+  };
 
   render() {
     return (

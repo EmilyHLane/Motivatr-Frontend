@@ -23,7 +23,7 @@ class Header extends Component {
       this.setState({ user: "guest" });
     } else if (jwt && this.state.user === "guest") {
       this.setState({ user: "registered" });
-    } else console.log(this.state.user + ":" + jwt);
+    } else console.log(this.state.user);
   }
 
   handleLogout() {

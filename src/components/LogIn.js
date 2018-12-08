@@ -48,7 +48,7 @@ class Login extends Component {
           }
         })
         .catch(err => {
-          alert(err);
+          alert(err, "frontend login error after submit post request");
         });
     } else {
       alert("Please enter your email and password.");
