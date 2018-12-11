@@ -6,8 +6,7 @@ class PostBuilder extends Component {
   render() {
     return (
       <div className="post-builder-container col-1">
-        <h2>Post Builder</h2>
-        <h3>Create motivation, share it with the world!</h3>
+        <h2>Create motivation, share it with the world!</h2>
         <NewPost
           textLower={this.props.textLower}
           textUpper={this.props.textUpper}

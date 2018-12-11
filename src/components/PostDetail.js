@@ -122,7 +122,6 @@ class PostDetail extends Component {
     const postUser = this.state.postUser;
     return (
       <div className="post-detail-container">
-        <h2>PostDetail page</h2>
         <div className="post-detail-post">
           <p>{data.textUpper}</p>
           <img src={data.image} alt={data.altTxt} />

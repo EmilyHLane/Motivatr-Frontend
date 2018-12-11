@@ -363,3 +363,60 @@ textarea {
   background-color: grey;
   margin: 5px 0;
 }
+
+/*------------------------*/
+/*------SMALL SCREEN------*/
+/*------------------------*/
+
+@media only screen and (max-width: 470px) {
+  /*------create post page------*/
+
+  .create-post-container {
+    flex-direction: column;
+  }
+
+  .post-text-placeholder,
+  .post-image-placeholder {
+    max-width: 300px;
+  }
+
+  .post-image-placeholder img {
+    max-width: 296px;
+  }
+  .new-post-container button {
+    max-width: 300px;
+  }
+
+  .select-image-container {
+    width: 300px;
+    margin: 0 auto;
+    border: none;
+  }
+
+  /*------post detail page------*/
+
+  .col-1 {
+    width: 300px;
+  }
+
+  .post-builder-container h2 {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+  }
+
+  .post-detail-post {
+    max-width: 304px;
+    margin-top: 30px;
+  }
+
+  .post-detail-post img {
+    max-width: 300px;
+  }
+
+  .post-detail-actions {
+    max-width: 300px;
+  }
+}
+
+@media only screen and (min-width: 471) and (max-width: 900px) {
+}
