@@ -179,6 +179,7 @@ button {
   align-items: center;
   max-width: 404px;
   border: 2px solid rgb(226, 63, 18);
+  margin-top: 30px;
 }
 
 /*------Post Detail Actions------*/
@@ -371,7 +372,8 @@ textarea {
 @media only screen and (max-width: 470px) {
   /*------create post page------*/
 
-  .create-post-container {
+  .create-post-container,
+  .post-edit-page {
     flex-direction: column;
   }
 
@@ -391,6 +393,25 @@ textarea {
     width: 300px;
     margin: 0 auto;
     border: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  /*------sign up page------*/
+  /*------login page------*/
+  .login-container,
+  .signup-container {
+    width: 90%;
+  }
+
+  .login-form,
+  .signup-form {
+    margin: 20px;
+  }
+
+  .login-form button,
+  .signup-form button {
+    margin-top: 20px;
   }
 
   /*------post detail page------*/
@@ -415,8 +436,15 @@ textarea {
 
   .post-detail-actions {
     max-width: 300px;
+    margin-bottom: 30px;
   }
-}
 
-@media only screen and (min-width: 471) and (max-width: 900px) {
+  .render-email-form {
+    min-width: 300px;
+  }
+
+  .email-form-container h2 {
+    text-align: center;
+    margin-top: 0;
+  }
 }
