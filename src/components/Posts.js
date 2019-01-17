@@ -22,7 +22,8 @@ class Posts extends Component {
 
   getPosts = () => {
     axios.get(`${baseURL}/api/post/`).then(res => {
-      const posts = res.data;
+      const data = res.data;
+      const posts = data.reverse();
       this.setState({ posts });
     });
   };
