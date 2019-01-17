@@ -60,6 +60,17 @@ Motivatr is an app designed to help you and your friends stay motivated to achie
 - [Ron Swanson quotes API](https://github.com/jamesseanwright/ron-swanson-quotes)
 - [Jack Handey quotes API](https://github.com/andrewmundy/jackhandeyapi)
 
+## Wins
+
+- Able to complete MVP
+- Increased understanding of how to use React
+- Increased comfort with Express, Node, MongoDB, and deploying to Heroku
+- Introduction to Nodemailer and Ethereal
+- Confidence in ability to resolve new issues and bugs
+
+## Challenges
+- Using React components and passing props in the most appropriate way - learning the React way of thinking.
+
 ## Installation steps
 
 1. Fork this repo
