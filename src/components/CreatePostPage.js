@@ -83,7 +83,7 @@ class CreatePostPage extends Component {
 
   render() {
     return (
-      <div className="create-post-page">
+      <main id="main" className="create-post-page">
         <div className="create-post-container">
           <PostBuilder
             textLower={this.state.textLower}
@@ -95,7 +95,7 @@ class CreatePostPage extends Component {
           />
           <SelectImage clickImg={this.clickImg} />
         </div>
-      </div>
+      </main>
     );
   }
 }

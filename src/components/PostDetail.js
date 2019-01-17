@@ -121,7 +121,7 @@ class PostDetail extends Component {
     const currUser = this.state.userId;
     const postUser = this.state.postUser;
     return (
-      <div className="post-detail-container">
+      <main id="main" className="post-detail-container">
         <div className="post-detail-post">
           <p>{data.textUpper}</p>
           <img src={data.image} alt={data.altTxt} />
@@ -168,7 +168,7 @@ class PostDetail extends Component {
             <Comments />
           </span>
         )}
-      </div>
+      </main>
     );
   }
 }

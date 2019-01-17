@@ -7,6 +7,22 @@
 body {
   margin: 0;
 }
+
+.skip-to-main {
+  position: absolute;
+  top: -77px;
+  background: rgb(255, 230, 0);
+  color: #002f5b;
+  padding: 10px;
+  height: 75px;
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.skip-to-main:focus {
+  top: 0;
+}
+
 /*------HEADER component------*/
 header {
   display: flex;

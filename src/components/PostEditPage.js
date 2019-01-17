@@ -59,14 +59,14 @@ class PostEditPage extends Component {
 
   render() {
     return (
-      <div className="post-edit-page">
+      <main id="main" className="post-edit-page">
         <PostEditForm
           data={this.state}
           editPost={this.editPost}
           submitEdit={this.submitEdit}
         />
         <SelectImage />
-      </div>
+      </main>
     );
   }
 }

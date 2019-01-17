@@ -21,9 +21,9 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <main id="main">
         <Posts />
-      </div>
+      </main>
     );
   }
 }

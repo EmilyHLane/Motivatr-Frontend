@@ -16,6 +16,9 @@ class App extends Component {
   render() {
     return (
       <div>
+        <a href="#main" className="skip-to-main">
+          Skip to main content
+        </a>
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
