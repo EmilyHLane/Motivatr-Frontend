@@ -23,6 +23,10 @@ body {
   top: 0;
 }
 
+.hide {
+  display: none;
+}
+
 /*------HEADER component------*/
 header {
   display: flex;
@@ -30,8 +34,7 @@ header {
   margin: 0;
   background-image: url("https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8ccfcc13bfcdfca6f54a8e043ffbe075&w=1000&q=80");
   background-size: cover;
-  border-bottom: solid 1px rgb(43, 173, 229);
-  border-bottom-color: rgb(226, 63, 18);
+  border-bottom: solid 1px rgb(226, 63, 18);
 }
 
 .big-header {
@@ -78,6 +81,15 @@ nav a:hover {
 
 a {
   text-decoration: none;
+}
+
+.welcome-blob {
+  height: 300px;
+  width: 500px;
+  border: 2px solid white;
+  background-color: rgba(188, 238, 242, 0.5);
+  border-radius: 42% 35% 46% 33% / 46% 43% 42% 45%;
+  box-shadow: 1px 1px 1px 2px white;
 }
 
 /*------SIGNUP and LOGIN components------*/

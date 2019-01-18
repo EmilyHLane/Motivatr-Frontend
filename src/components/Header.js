@@ -37,6 +37,7 @@ class Header extends Component {
       return null;
     }
     const isHome = this.props.location.pathname === "/";
+
     return (
       <header className={isHome ? "big-header" : "small-header"}>
         <div className="logo-name-container">
@@ -61,6 +62,20 @@ class Header extends Component {
             )}
           </nav>
         </div>
+
+        {isHome ? (
+          <div className="welcome-blob">
+            <h2>Get motivated</h2>
+            <p>Motivational posts to keep you moving toward your goals</p>
+            <h2>Inspire others</h2>
+            <p>
+              Send posts to a friend in need of motivation, or create your own
+              to share with the world
+            </p>
+          </div>
+        ) : (
+          <div className="hide" />
+        )}
       </header>
     );
   }
