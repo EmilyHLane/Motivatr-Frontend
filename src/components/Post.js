@@ -6,7 +6,12 @@ const Post = props => {
 
   const postData = getData.map(data => {
     return (
-      <Link id={data._id} to={`/post/${data._id}`} key={data._id}>
+      <Link
+        className="inline-block"
+        id={data._id}
+        to={`/post/${data._id}`}
+        key={data._id}
+      >
         <div className="post-container">
           <p id={data._id}>{data.textUpper}</p>
           <img id={data._id} src={data.image} alt={data.altTxt} />

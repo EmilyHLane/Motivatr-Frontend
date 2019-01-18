@@ -148,9 +148,13 @@ button {
 
 /*------HOMEPAGE - POST component------ */
 .all-posts {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  column-count: 3;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .post-container {
