@@ -163,6 +163,7 @@ button {
   column-count: 3;
   width: 80%;
   margin: 10px auto;
+  text-align: center;
 }
 
 .inline-block {
@@ -426,9 +427,18 @@ textarea {
     margin: 0 auto;
     border: none;
   }
+
+  .all-posts {
+    -webkit-column-count: 1;
+    column-count: 1;
+    -webkit-column-width: 406px;
+    column-width: 406px;
+    text-align: center;
+    width: 100%;
+  }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 900px) and (min-width: 471px) {
   /*------sign up page------*/
   /*------login page------*/
   .login-container,
@@ -478,5 +488,16 @@ textarea {
   .email-form-container h2 {
     text-align: center;
     margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 1160px) and (min-width: 901px) {
+  .all-posts {
+    -webkit-column-count: 2;
+    column-count: 2;
+    width: 70%;
+    margin: 10px auto;
+    column-width: 406px;
+    text-align: center;
   }
 }
