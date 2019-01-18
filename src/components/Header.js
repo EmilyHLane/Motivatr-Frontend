@@ -40,28 +40,31 @@ class Header extends Component {
 
     return (
       <header className={isHome ? "big-header" : "small-header"}>
-        <div className="logo-name-container">
-          <Link to="/">
-            <h1>motivatr</h1>
-          </Link>
-        </div>
-        <div className="nav-container">
-          <nav>
-            {this.state.user === "registered" ? (
-              <span>
-                <Link to="/createpost">Create</Link>
-                <Link to="/logout" onClick={this.handleLogout}>
-                  Logout
-                </Link>
-              </span>
-            ) : (
-              <span>
-                <Link to="/login">Log In</Link>
-                <Link to="/signup">Sign up</Link>
-              </span>
-            )}
-          </nav>
-        </div>
+        <section className="title-nav-bar">
+          <div className="logo-name-container">
+            <Link to="/">
+              <h1>motivatr</h1>
+            </Link>
+          </div>
+
+          <div className="nav-container">
+            <nav>
+              {this.state.user === "registered" ? (
+                <span>
+                  <Link to="/createpost">Create</Link>
+                  <Link to="/logout" onClick={this.handleLogout}>
+                    Logout
+                  </Link>
+                </span>
+              ) : (
+                <span>
+                  <Link to="/login">Log In</Link>
+                  <Link to="/signup">Sign up</Link>
+                </span>
+              )}
+            </nav>
+          </div>
+        </section>
 
         {isHome ? (
           <div className="welcome-blob">
