@@ -59,12 +59,12 @@ header img {
 .logo-name-container,
 .nav-container {
   display: flex;
-  margin: 0 20px;
+  margin: 10px 0 0 40px;
 }
 
 nav {
   display: flex;
-  margin-top: 25px;
+  margin-top: 33px;
   margin-right: 20px;
 }
 
@@ -92,15 +92,34 @@ a {
 }
 
 .welcome-blob {
-  height: 300px;
+  height: 350px;
   width: 500px;
   border: 2px solid white;
-  background-color: rgba(188, 238, 242, 0.5);
+  background-color: rgba(188, 238, 242, 0.75);
   border-radius: 42% 35% 46% 33% / 46% 43% 42% 45%;
   box-shadow: 1px 1px 1px 2px white;
   /*relative = not removed from document flow*/
   position: relative;
   top: 125px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-blob h2 {
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 2em;
+  color: rgb(40, 34, 33);
+}
+
+.welcome-blob p {
+  margin-top: 5px;
+  width: 300px;
+  text-align: center;
+  color: rgb(40, 34, 33);
 }
 
 /*------SIGNUP and LOGIN components------*/
@@ -265,6 +284,7 @@ button {
 .edit-icon {
   margin: 0 20px;
 }
+
 /*-----------------------*/
 /*------CREATE POST------*/
 /*----------&------------*/
@@ -409,9 +429,9 @@ textarea {
   margin: 5px 0;
 }
 
-/*------------------------*/
-/*------SMALL SCREEN------*/
-/*------------------------*/
+/*-------------------------------*/
+/*------SMALL SCREEN STYLES------*/
+/*-------------------------------*/
 
 @media only screen and (max-width: 470px) {
   /*------header------*/
@@ -420,10 +440,6 @@ textarea {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  h1 {
-    font-size: 4em;
   }
 
   .title-nav-bar {
@@ -439,6 +455,23 @@ textarea {
     position: absolute;
     top: 400px;
     margin: 0;
+  }
+
+  .welcome-blob {
+    height: 300px;
+    width: 345px;
+    top: 115px;
+  }
+
+  .welcome-blob h2 {
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 1.8em;
+  }
+
+  .welcome-blob p {
+    margin-top: 0;
+    width: 225px;
   }
 
   /*------create post page------*/
@@ -477,6 +510,24 @@ textarea {
 }
 
 @media only screen and (max-width: 900px) and (min-width: 471px) {
+  /*------header------*/
+
+  .welcome-blob {
+    height: 300px;
+    width: 385px;
+  }
+
+  .welcome-blob h2 {
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 1.8em;
+  }
+
+  .welcome-blob p {
+    margin-top: 0;
+    width: 225px;
+  }
+
   /*------sign up page------*/
   /*------login page------*/
 
