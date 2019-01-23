@@ -94,10 +94,10 @@ a {
 .welcome-blob {
   height: 350px;
   width: 500px;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   background-color: rgba(188, 238, 242, 0.75);
-  border-radius: 42% 35% 46% 33% / 46% 43% 42% 45%;
-  box-shadow: 1px 1px 1px 2px white;
+  /* border-radius: 42% 35% 46% 33% / 46% 43% 42% 45%; */
+  /* box-shadow: 1px 1px 1px 2px white; */
   /*relative = not removed from document flow*/
   position: relative;
   top: 125px;
