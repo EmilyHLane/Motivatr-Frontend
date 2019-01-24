@@ -68,13 +68,8 @@ class Header extends Component {
 
         {isHome ? (
           <div className="welcome-blob">
-            <h2>Get motivated</h2>
-            <p>Motivational posts to keep you moving toward your goals</p>
-            <h2>Inspire others</h2>
-            <p>
-              Send posts to a friend in need of motivation, or create your own
-              to share with the world
-            </p>
+            <h2>Get motivated.</h2>
+            <h2>Inspire others.</h2>
           </div>
         ) : (
           <div className="hide" />
