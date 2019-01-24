@@ -32,10 +32,12 @@ class Header extends Component {
   render() {
     if (
       this.props.location.pathname === "/signup" ||
-      this.props.location.pathname === "/login"
+      this.props.location.pathname === "/login" ||
+      this.props.location.pathname === "/logout"
     ) {
       return null;
     }
+
     const isHome = this.props.location.pathname === "/";
 
     return (
@@ -47,33 +49,26 @@ class Header extends Component {
             </Link>
           </div>
 
-          <div className="nav-container">
-            <nav>
-              {this.state.user === "registered" ? (
-                <span>
-                  <Link to="/createpost">Create</Link>
-                  <Link to="/logout" onClick={this.handleLogout}>
-                    Logout
-                  </Link>
-                </span>
-              ) : (
-                <span className="small-screen-nav">
-                  <Link to="/login">Log In</Link>
-                  <Link to="/signup">Sign up</Link>
-                </span>
-              )}
-            </nav>
-          </div>
+          {this.props.location.pathname === "/" ? (
+            <div className="nav-container">
+              <nav>
+                {this.state.user === "registered" ? (
+                  <span className="small-screen-nav">
+                    <Link to="/createpost">Create</Link>
+                    <Link to="/logout" onClick={this.handleLogout}>
+                      Logout
+                    </Link>
+                  </span>
+                ) : (
+                  <span className="small-screen-nav">
+                    <Link to="/login">Log In</Link>
+                    <Link to="/signup">Sign up</Link>
+                  </span>
+                )}
+              </nav>
+            </div>
+          ) : null}
         </section>
-
-        {isHome ? (
-          <div className="welcome-blob">
-            <h2>Get motivated.</h2>
-            <h2>Inspire others.</h2>
-          </div>
-        ) : (
-          <div className="hide" />
-        )}
       </header>
     );
   }

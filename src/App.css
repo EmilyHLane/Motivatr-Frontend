@@ -51,28 +51,35 @@ header img {
 
 .title-nav-bar {
   display: flex;
-  position: absolute;
   width: 100%;
   justify-content: space-between;
 }
 
-.logo-name-container,
-.nav-container {
+.logo-name-container {
   display: flex;
-  margin: 10px 0 0 40px;
+  margin: 0 0 0 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.logo-name-container a {
+  display: flex;
+}
+
+.nav-container {
+  padding-top: 30px;
 }
 
 nav {
   display: flex;
-  margin-top: 33px;
   margin-right: 20px;
 }
 
 h1 {
   margin: 0;
-  padding-top: 10px;
+  /* padding-top: 10px; */
   color: rgb(255, 230, 0);
-  font-size: 3em;
+  font-size: 2.5em;
   font-family: "Covered By Your Grace", cursive;
 }
 
@@ -92,11 +99,10 @@ a {
 }
 
 .welcome-blob {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  top: -340px;
+  text-align: center;
+  margin-bottom: -190px;
 }
 
 .welcome-blob h2 {
@@ -290,7 +296,7 @@ button {
 }
 
 .post-builder-container h2 {
-  margin: 40px auto 0;
+  margin: 40px auto 40px;
 }
 
 .post-builder-container h3 {
@@ -434,8 +440,8 @@ textarea {
     margin: 0 auto;
   }
 
-  h1 {
-    font-size: 2.8em;
+  nav {
+    margin-right: 0;
   }
 
   .nav-container {
@@ -462,7 +468,9 @@ textarea {
   }
 
   .welcome-blob {
-    margin-top: 130px;
+    margin-top: 0;
+    margin-bottom: -125px;
+    top: -380px;
   }
 
   .welcome-blob h2 {
@@ -517,6 +525,11 @@ textarea {
     -webkit-column-count: 1;
     column-count: 1;
   }
+
+  .create-post-container,
+  .post-edit-page {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 900px) and (min-width: 781px) {
@@ -524,10 +537,19 @@ textarea {
     -webkit-column-count: 2;
     column-count: 2;
   }
+
+  .create-post-container,
+  .post-edit-page {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 900px) and (min-width: 471px) {
   /*------header------*/
+
+  .welcome-blob {
+    margin-bottom: -160px;
+  }
 
   .welcome-blob h2 {
     font-size: 3.5em;

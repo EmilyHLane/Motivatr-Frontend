@@ -22,6 +22,10 @@ class Home extends Component {
   render() {
     return (
       <main id="main">
+        <section className="welcome-blob">
+          <h2>Get motivated.</h2>
+          <h2>Inspire others.</h2>
+        </section>
         <Posts />
       </main>
     );
