@@ -57,7 +57,7 @@ class Header extends Component {
                   </Link>
                 </span>
               ) : (
-                <span>
+                <span className="small-screen-nav">
                   <Link to="/login">Log In</Link>
                   <Link to="/signup">Sign up</Link>
                 </span>

@@ -434,18 +434,39 @@ textarea {
     margin: 0 auto;
   }
 
+  h1 {
+    font-size: 2.8em;
+  }
+
   .nav-container {
     position: absolute;
-    top: 400px;
+    top: 295px;
     margin: 0;
   }
 
+  .small-screen-nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav a {
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #122563;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
   .welcome-blob {
-    height: 400px;
+    margin-top: 130px;
   }
 
   .welcome-blob h2 {
-    font-size: 2.8em;
+    font-size: 2.9em;
   }
 
   /*------create post page------*/
