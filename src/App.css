@@ -102,7 +102,8 @@ a {
   position: relative;
   top: 125px;
   margin: 0 auto;
-  display: flex;
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -167,6 +168,7 @@ button {
   padding: 15px;
   font-weight: bold;
   border: none;
+  margin-top: 15px;
 }
 
 .close-button {
@@ -328,7 +330,6 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* position: relative; */
 }
 
 .edit-post-container {
@@ -502,10 +503,32 @@ textarea {
   .all-posts {
     -webkit-column-count: 1;
     column-count: 1;
-    -webkit-column-width: 406px;
-    column-width: 406px;
     text-align: center;
     width: 100%;
+  }
+
+  .login-container,
+  .signup-container {
+    width: 90%;
+  }
+
+  .login-form,
+  .signup-form {
+    margin: 20px;
+  }
+}
+
+@media only screen and (max-width: 780px) and (min-width: 471px) {
+  .all-posts {
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 781px) {
+  .all-posts {
+    -webkit-column-count: 2;
+    column-count: 2;
   }
 }
 
@@ -581,13 +604,11 @@ textarea {
   }
 }
 
-@media only screen and (max-width: 1160px) and (min-width: 471px) {
+@media only screen and (max-width: 1160px) and (min-width: 901px) {
   .all-posts {
     -webkit-column-count: 2;
     column-count: 2;
     width: 70%;
     margin: 10px auto;
-    column-width: 406px;
-    text-align: center;
   }
 }
