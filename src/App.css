@@ -240,7 +240,7 @@ button {
 .post-detail-actions {
   display: flex;
   width: 400px;
-  margin: 10px 0 50px;
+  margin: 0 0 50px;
   align-items: center;
 }
 
@@ -261,10 +261,15 @@ button {
   padding: 0;
   text-decoration: none;
   font-size: 1.5em;
+  margin-top: 0;
 }
 
 .love-count {
   margin-right: 20px;
+  font-size: 1em;
+  align-self: center;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .post-edit-and-delete {
@@ -472,6 +477,7 @@ textarea {
     flex-direction: column;
     align-items: center;
   }
+
   .welcome-blob {
     position: absolute;
     bottom: 55%;
@@ -524,6 +530,17 @@ textarea {
   .login-form,
   .signup-form {
     margin: 20px;
+  }
+
+  /*------post detail page-----*/
+  .post-detail-container {
+    width: 90%;
+  }
+
+  .post-detail-actions,
+  .post-detail-post,
+  .post-detail-post img {
+    width: 100%;
   }
 }
 
@@ -592,16 +609,15 @@ textarea {
   }
 
   .post-detail-post {
-    max-width: 304px;
+    max-width: 404px;
     margin-top: 30px;
   }
 
-  .post-detail-post img {
-    max-width: 300px;
+  .post-detail-container {
+    width: 90%;
   }
 
   .post-detail-actions {
-    max-width: 300px;
     margin-bottom: 30px;
   }
 
@@ -610,7 +626,6 @@ textarea {
   }
 
   .email-form-container h2 {
-    text-align: center;
     margin-top: 0;
   }
 }
