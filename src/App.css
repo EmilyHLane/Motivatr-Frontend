@@ -8,6 +8,10 @@ body {
   margin: 0;
 }
 
+p {
+  color: black;
+}
+
 .skip-to-main {
   position: absolute;
   top: -77px;
