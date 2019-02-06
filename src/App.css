@@ -322,6 +322,12 @@ button {
 .col-2 {
   width: 40%;
 }
+
+.new-post-image:hover,
+.new-post-image:focus {
+  border: 2px solid rgb(226, 63, 18);
+}
+
 /*------NEWPOST component------*/
 .new-post-container {
   display: flex;

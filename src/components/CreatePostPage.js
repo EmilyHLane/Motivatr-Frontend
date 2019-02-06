@@ -25,10 +25,13 @@ class CreatePostPage extends Component {
   };
 
   //adds clicked image
+  //scroll to top when image added
+  //TODO: animate click
   clickImg = e => {
     const newImage = e.target.src;
     const altTxt = e.target.alt;
     this.setState({ image: newImage, altTxt });
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   //creates new post

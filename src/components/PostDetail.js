@@ -105,6 +105,7 @@ class PostDetail extends Component {
     const postId = this.props.match.params._id;
     const loveCount = parseInt(this.state.loveCount) + 1;
     this.setState({ loveCount });
+
     axios
       .put(`${baseURL}/api/post/${postId}`, {
         likes: this.state.loveCount
